@@ -42,7 +42,7 @@ const LandingPage = () => {
           <p
             className={`btn-text text-sm uppercase px-4 py-[6px] border-[1px] border-zinc-800 rounded-full cursor-pointer ${
               isHovered ? "bg-zinc-800 text-[#f1f1f1]" : "text-zinc-700"
-            } transition-all duration-200`}
+            } transition-all duration-300`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -56,7 +56,7 @@ const LandingPage = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <MdArrowOutward className="z-10 transition-all duration-200" />
+            <MdArrowOutward className="z-10 transition-all duration-300" />
           </div>
         </div>
       </div>
