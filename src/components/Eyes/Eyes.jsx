@@ -8,14 +8,13 @@ const Eyes = () => {
   const rightEyeRef = useRef(null);
 
   useEffect(() => {
-    window.addEventListener("mousemove", (e) => {
+    const handleMouseMove = (e) => {
       const updateRotation = (eyeRef, setRotation) => {
         if (!eyeRef.current) return;
         const rect = eyeRef.current.getBoundingClientRect();
 
         const eyeCenterX = rect.left + rect.width / 2;
         const eyeCenterY = rect.top + rect.height / 2;
-
         const deltaX = e.clientX - eyeCenterX;
         const deltaY = e.clientY - eyeCenterY;
 
@@ -24,8 +23,12 @@ const Eyes = () => {
       };
       updateRotation(leftEyeRef, setRotateLeft);
       updateRotation(rightEyeRef, setRotateRight);
-    });
-  });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   return (
     <div className="w-full h-screen">
@@ -34,7 +37,7 @@ const Eyes = () => {
         style={{ backgroundImage: `url(${eyeBackground})` }}
       >
         <div className="absolute flex gap-12">
-          <div className="w-[14vw] h-[14vw] rounded-full bg-zinc-100 flex justify-center items-center">
+          <div className="w-[14.5vw] h-[14.5vw] rounded-full bg-zinc-100 flex justify-center items-center">
             <div className="relative w-[8.5vw] h-[8.5vw] rounded-full bg-zinc-800 text-white font-[Neue_Montreal] flex justify-center items-center">
               PLAY
               <div
@@ -49,7 +52,7 @@ const Eyes = () => {
             </div>
           </div>
 
-          <div className="w-[14vw] h-[14vw] rounded-full bg-zinc-100 flex justify-center items-center">
+          <div className="w-[14.5vw] h-[14.5vw] rounded-full bg-zinc-100 flex justify-center items-center">
             <div className="relative w-[8.5vw] h-[8.5vw] rounded-full bg-zinc-800 text-white font-[Neue_Montreal] flex justify-center items-center">
               PLAY
               <div

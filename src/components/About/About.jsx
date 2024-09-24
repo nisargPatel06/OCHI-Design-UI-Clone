@@ -7,13 +7,13 @@ const About = () => {
 
   return (
     <div className="w-full font-['Neue_Montreal'] rounded-3xl bg-[#CDEA68]">
-      <h3 className="pt-20 px-14 text-[3.8vw] leading-[4vw] text-zinc-900">
+      <h3 className="text-msg pt-[6vw] px-[4vw] text-[3.8vw] leading-[4vw] text-zinc-900">
         Ochi is a strategic presentation agency for forward-thinking businesses
         that need to <u>raise funds</u>, <u>sell products</u>,{" "}
         <u>explain complex ideas</u>, & <u>hire great people</u>.
       </h3>
 
-      <div className="expect-section mt-14 px-14 pt-5 pb-[5vw] text-zinc-800 flex border-t-[1px] border-b-[1px] border-[#99AD53]">
+      <div className="expect-sec mt-[4.5vw] px-[4vw] pt-5 pb-[5vw] text-zinc-800 flex border-t-[1px] border-b-[1px] border-[#99AD53]">
         <div className="e-left w-1/2">
           <p>What you can expect:</p>
         </div>
@@ -41,7 +41,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex px-14 pt-5 pb-20">
+      <div className="approach-sec flex px-[4vw] pt-5 pb-[4vw]">
         <div className="w-1/2 flex flex-col gap-2">
           <h1 className="text-[3.8vw] text-zinc-900">Our approach:</h1>
           <button

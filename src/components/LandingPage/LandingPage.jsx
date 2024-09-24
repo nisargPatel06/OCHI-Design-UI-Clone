@@ -7,7 +7,7 @@ const LandingPage = () => {
 
   return (
     <div className="w-full h-screen font-['Neue_Montreal'] pt-1">
-      <div className="text-section mt-36 px-14">
+      <div className="text-section mt-36 px-[4vw]">
         {["We Create", "Eye-Opening", "Presentations"].map((item, index) => (
           <div key={index} className="masker flex">
             {index === 1 && (
@@ -30,7 +30,7 @@ const LandingPage = () => {
         Site of the Day
       </p>
 
-      <div className="border-t-[1px] border-zinc-400 text-zinc-700 mt-32 py-5 px-14 flex justify-between">
+      <div className="border-t-[1px] border-zinc-400 text-zinc-700 mt-32 py-5 px-[4vw] flex justify-between">
         {[
           "For public and private companies",
           "From the first pitch to IPO",

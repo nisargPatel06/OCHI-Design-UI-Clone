@@ -25,7 +25,7 @@ const Navbar = () => {
   }, [scrollPosition]);
   return (
     <div
-      className={`fixed z-[99] w-full font-['Neue_Montreal'] px-14 py-6 flex justify-between transition-transform duration-300 backdrop-blur-[6px] ${
+      className={`fixed z-[99] w-full font-['Neue_Montreal'] px-[4vw] py-[2vw] py- flex justify-between transition-transform duration-300 backdrop-blur-[6px] ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >

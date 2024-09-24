@@ -1,4 +1,11 @@
-import { Navbar, LandingPage, Marquee, About, Eyes } from "./components";
+import {
+  Navbar,
+  LandingPage,
+  Marquee,
+  About,
+  Eyes,
+  Projects,
+} from "./components";
 
 function App() {
   return (
@@ -8,6 +15,7 @@ function App() {
       <Marquee />
       <About />
       <Eyes />
+      <Projects />
     </div>
   );
 }
