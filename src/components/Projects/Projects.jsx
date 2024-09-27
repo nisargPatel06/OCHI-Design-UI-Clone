@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import "./Projects.css";
+import { MdArrowOutward } from "react-icons/md";
 import CS from "../../assets/Cardboard_Spaceship.png";
 import MH from "../../assets/Matt_Horn.png";
 import Fyde from "../../assets/Fyde.png";
@@ -7,6 +9,7 @@ import Trawa from "../../assets/Trawa.jpg";
 import PB from "../../assets/Premium_Blend.png";
 
 const Projects = () => {
+  const [isHovered, setIsHovered] = useState(false);
   const projectData = [
     {
       name: "Cardboard Spaceship",
@@ -35,9 +38,9 @@ const Projects = () => {
       </h1>
 
       <div className="border-t-[1px] border-zinc-400">
-        <div className="px-[4vw] py-12 w-full flex flex-wrap gap-3">
+        <div className="px-[4vw] py-12 w-full flex flex-wrap gap-3 overflow-hidden">
           {projectData.map((project, index) => (
-            <div className="project w-[49%] mb-[2vw]" key={index}>
+            <div className="project w-[49%] mb-[2.5vw]" key={index}>
               <div className="flex items-center gap-2 mb-[1vw]" id={index}>
                 <div className="black-dot w-[10px] h-[10px] rounded-full bg-zinc-800"></div>
                 <h2 className="uppercase text-sm text-zinc-800">
@@ -45,21 +48,55 @@ const Projects = () => {
                 </h2>
               </div>
 
-              <div className="group w-full h-[77vh]">
-                <div className="w-full h-full rounded-xl overflow-hidden transition-scale duration-700 group-hover:scale-95">
-                  <img
-                    className="rounded-xl transition-scale duration-700 group-hover:scale-110"
-                    src={project.img}
-                    alt={project.name}
-                  />
+              <div className="relative">
+                <h1
+                  className={`absolute z-10 flex font-['Roboto_Condensed_Medium'] font-semibold text-[6vw] text-[#CDEA68] top-1/2 -translate-y-1/2 ${
+                    index % 2 == 0
+                      ? "left-full -translate-x-1/2"
+                      : "right-full translate-x-1/2"
+                  }`}
+                >
+                  {project.name.split("").map((item, idx) => (
+                    <span key={idx} className="uppercase leading-none">
+                      {item}
+                    </span>
+                  ))}
+                </h1>
+
+                <div className="group w-full h-[77vh cursor-pointer">
+                  <div className="w-full h-full rounded-xl overflow-hidden transition-scale duration-700 group-hover:scale-95">
+                    <img
+                      className="rounded-xl transition-scale duration-700 group-hover:scale-110"
+                      src={project.img}
+                      alt={project.name}
+                    />
+                  </div>
                 </div>
               </div>
 
-              {project.tag.map((tag, index) => (
-                <div>{tag}</div>
-              ))}
+              <div className="flex flex-wrap gap-2 mt-[1vw]">
+                {project.tag.map((tag, index) => (
+                  <p
+                    key={index}
+                    className="tags relative z-[1] overflow-hidden px-3 py-1 border border-[#494949] rounded-full uppercase text-[#2b2b2b] text-sm cursor-pointer hover:text-[#f5f5f5]"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                  >
+                    {tag}
+                  </p>
+                ))}
+              </div>
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-center">
+          <button className="group relative p-[.5vw] pl-6 pr-16 w-fit h-[9.5vh] flex items-center bg-zinc-800 text-white text-sm rounded-full">
+            VIEW ALL CASE STUDIES
+            <div className="w-2 h-2 text-zinc-700 absolute flex justify-center items-center right-6 rounded-full bg-[#fff] group-hover:h-10 group-hover:w-10 group-hover:right-2 transition-all duration-300">
+              <MdArrowOutward className="absolute text-lg opacity-0 group-hover:opacity-[1] transition-all duration-300" />
+            </div>
+          </button>
         </div>
       </div>
     </div>

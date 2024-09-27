@@ -45,7 +45,7 @@ const About = () => {
         <div className="w-1/2 flex flex-col gap-2">
           <h1 className="text-[3.8vw] text-zinc-900">Our approach:</h1>
           <button
-            className="group relative p-[.5vw] pl-6 w-[12.5vw] h-[4vw] flex items-center bg-zinc-800 text-white text-[1vw] rounded-full"
+            className="group relative p-[.5vw] pl-6 pr-16 w-fit h-[9vh] flex items-center bg-zinc-800 text-white text-sm rounded-full"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
