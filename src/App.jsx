@@ -6,8 +6,11 @@ import {
   Eyes,
   Projects,
 } from "./components";
+import LocomotiveScroll from "locomotive-scroll";
 
 function App() {
+  const locomotiveScroll = new LocomotiveScroll();
+
   return (
     <div className="bg-[#f1f1f1]">
       <Navbar />

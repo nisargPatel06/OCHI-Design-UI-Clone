@@ -25,9 +25,14 @@ const Navbar = () => {
   }, [scrollPosition]);
   return (
     <div
-      className={`fixed z-[99] w-full font-['Neue_Montreal'] px-[4vw] py-[2vw] py- flex justify-between transition-transform duration-300 backdrop-blur-[6px] ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`fixed z-[99] w-full font-Nunito
+    px-[6vw] py-[4vw] sm:px-[5vw] sm:py-[3vw] 
+    md:px-[4vw] md:py-[2vw] lg:px-[3.5vw] lg:py-[1.1vw]
+    flex justify-between items-center
+    transition-transform duration-300 backdrop-blur-[6px]
+    text-sm sm:text-base md:text-lg lg:text-xl 
+    ${isVisible ? "translate-y-0" : "-translate-y-full"}
+  `}
     >
       <div className="logo cursor-pointer">
         <svg
@@ -60,14 +65,12 @@ const Navbar = () => {
         </svg>
       </div>
 
-      <div className="links flex gap-7">
+      <div className="py-2 links flex gap-2 md:gap-7 sm:gap-5">
         {["Services", "Our work", "About us", "Insights", "Contact us"].map(
           (item, index) => (
             <a
               key={index}
-              className={`text-md  cursor-pointer ${
-                index === 4 && "ml-[15vw]"
-              }`}
+              className={`text-md cursor-pointer ${index === 4 && "ml-[18vw]"}`}
             >
               {item}
             </a>
